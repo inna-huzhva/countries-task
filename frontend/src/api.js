@@ -3,6 +3,13 @@ export async function getCountries() {
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
-  const data = await response.json();
-  return data.map((country) => country.name);
+  return await response.json();
+}
+
+export async function getCountryInfo(country) {
+  const response = await fetch(`/api/borderCountries/${country.countryCode}`);
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return await response.json();
 }

@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+}
+
+.countries,
+.selected-country {
+  width: 50%;
+  padding: 10px;
+}
