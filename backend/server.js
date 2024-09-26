@@ -28,9 +28,8 @@ app.get("/api/countryPopulation/:countryName", async (req, res) => {
   const response = await axios.get(
     `https://countriesnow.space/api/v0.1/countries/population`
   );
-  const countryPopulation = response.data.data.find(
-    (c) => c.country === countryName
-  );
+  const countryPopulation =
+    response.data.data.find((c) => c.country === countryName) || {};
   res.json(countryPopulation);
 });
 
@@ -42,7 +41,7 @@ app.get("/api/countryFlag/:countryName", async (req, res) => {
   );
   const countryFlag = response.data.data.find(
     (c) => c.name === countryName
-  ).flag;
+  )?.flag;
   res.json(countryFlag);
 });
 

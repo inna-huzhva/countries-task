@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.loading-error {
+  color: #521313;
+  background-color: #fac0c0;
+  font-size: 24px;
+  padding: 15px;
+}
+
 .container {
   display: flex;
 }
@@ -10,4 +17,15 @@
 .selected-country {
   width: 50%;
   padding: 10px;
+}
+
+.country {
+  font-size: 24px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.country.selected {
+  background-color: #dadada;
+  cursor: default;
 }
